@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタムテーマの変数 */
+:root {
+  --background: #fafafa;
+  --foreground: #1a1a1a;
+  --primary: #0070f3;
+  --secondary: #ff4081;
+  --border: #eaeaea;
+  --hover: rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0d0d0d;
+    --foreground: #f5f5f5;
+    --primary: #66b2ff;
+    --secondary: #ff80ab;
+    --border: #333;
+    --hover: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ベースのボディスタイル */
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* リンクのスタイル */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* ボタンのスタイル */
+button {
+  background-color: var(--primary);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--secondary);
+  transform: scale(1.05);
+}
+
+/* カードスタイル */
+.card {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
